@@ -1,3 +1,5 @@
+import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+
 import { EcowittClient, Url } from '../src';
 import mockAxios from './__mocks__/axios';
 import { responseMock } from './mocks/responseMock';
@@ -22,8 +24,15 @@ describe('EcowittClient', () => {
     expect(sensors).toHaveLength(response.ch_soil.length);
   });
 
-  const mockApiResponse = (data: Object) => {
-    // @ts-ignore
-    mockAxios.get.mockImplementationOnce(() => Promise.resolve({ data }));
+  const axiosResponse = <T>(data: T): AxiosResponse<T> => ({
+    data,
+    status: 200,
+    statusText: 'OK',
+    headers: {},
+    config: {} as InternalAxiosRequestConfig,
+  });
+
+  const mockApiResponse = (data: object) => {
+    jest.mocked(mockAxios.get).mockImplementationOnce(() => Promise.resolve(axiosResponse(data)));
   };
 });

@@ -29,5 +29,5 @@ class EcowittClient {
   }
 }
 
-export { EcowittClient };
 export type { SoilMoistureSensor };
+export { EcowittClient };

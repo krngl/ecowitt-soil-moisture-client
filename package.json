@@ -1,10 +1,10 @@
 {
-  "name": "@jakobgoerke/ecowitt-soil-moisture-client",
+  "name": "@krngl/ecowitt-soil-moisture-client",
   "version": "0.1.0",
   "main": "./build/src",
   "types": "./build/src/index.d.ts",
-  "repository": "git@github.com:jakobgoerke/ecowitt-soil-moisture-client.git",
-  "author": "revdev <mail@revdev.me>",
+  "repository": "git@github.com:krngl/ecowitt-soil-moisture-client.git",
+  "author": "krngl <mail@krngl.dev>",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "axios": "1.7.7",
